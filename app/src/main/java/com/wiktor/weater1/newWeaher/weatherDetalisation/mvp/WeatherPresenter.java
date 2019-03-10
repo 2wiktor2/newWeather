@@ -1,9 +1,7 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp;
 
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
-
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView;
-import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.Forecast;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.Forecastday;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.WeatherForecastResponse;
 
@@ -20,7 +18,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
     WeatherContract.Model model = new WeatherModel();
 
 
-    Call<WeatherForecastResponse> forecastWeatherCall;
+    Call <WeatherForecastResponse> forecastWeatherCall;
 
 
     public WeatherPresenter(WeatherContract.View view) {
@@ -31,16 +29,16 @@ public class WeatherPresenter implements WeatherContract.Presenter {
     public void start(CityModel cityModel) {
 
         forecastWeatherCall = model.getForecastWeather(cityModel.getNameForQuery(), 7);
-        forecastWeatherCall.enqueue(new Callback<WeatherForecastResponse>() {
+        forecastWeatherCall.enqueue(new Callback <WeatherForecastResponse>() {
             @Override
-            public void onResponse(Call<WeatherForecastResponse> call, Response<WeatherForecastResponse> response) {
+            public void onResponse(Call <WeatherForecastResponse> call, Response <WeatherForecastResponse> response) {
                 if (response.isSuccessful()) {
                     if (response.body() != null && response.body().getCurrent() != null) {
                         double t = response.body().getCurrent().getTempC();
                         view.showData(t);
 
 
-                        List<WeatherModelForView> newList = new ArrayList<>();
+                        List <WeatherModelForView> newList = new ArrayList <>();
                         int size = response.body().getForecast().getForecastday().size();
                         for (int i = 0; i < size; i++) {
                             Forecastday forecastDay = response.body().getForecast().getForecastday().get(i);
@@ -64,7 +62,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
             }
 
             @Override
-            public void onFailure(Call<WeatherForecastResponse> call, Throwable t) {
+            public void onFailure(Call <WeatherForecastResponse> call, Throwable t) {
                 view.showErrorDialog(t.getMessage());
             }
         });

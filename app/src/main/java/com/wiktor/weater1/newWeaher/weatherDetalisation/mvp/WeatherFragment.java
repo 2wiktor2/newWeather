@@ -1,9 +1,9 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -55,7 +55,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         if (arg != null) {
             CityModel model = (CityModel) arg.getSerializable(KEY_CITY_MODEL);
             if (model != null) {
-                Toast.makeText(getContext(), "получили модель " + model.getName(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), "получили модель " + model.getName(), Toast.LENGTH_SHORT).show();
                 presenter.start(model);
             }
         }
@@ -85,7 +85,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     @Override
-    public void showList(List<WeatherModelForView> list) {
+    public void showList(List <WeatherModelForView> list) {
         WeaverAdapter adapter = new WeaverAdapter(list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
