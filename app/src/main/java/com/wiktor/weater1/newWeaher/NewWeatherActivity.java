@@ -24,6 +24,8 @@ public class NewWeatherActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         openCityListFragment();
     }
@@ -34,5 +36,11 @@ public class NewWeatherActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.frame, cityListFragment);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        toolbar.setTitle(R.string.toolbar_title);
     }
 }

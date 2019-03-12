@@ -41,7 +41,6 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         return weatherFragment;
     }
 
-
     WeatherContract.Presenter presenter = new WeatherPresenter(this);
 
     @Nullable
@@ -69,6 +68,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
         actionBar = getActivity().findViewById(R.id.main_toolbar);
+
 
     }
 
@@ -103,9 +103,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         actionBar.setTitle(cityModel.getName());
         // getActivity().getActionBar().setTitle(cityModel.getName());
         //toolbar.setTitle(cityModel.getName());
-
-
     }
+
 
 }
 
