@@ -24,6 +24,7 @@ public class NewWeatherActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+
         openCityListFragment();
     }
 

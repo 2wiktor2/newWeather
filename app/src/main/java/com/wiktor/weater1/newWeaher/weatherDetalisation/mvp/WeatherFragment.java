@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @BindView(R.id.recycler_view_container)
     RecyclerView mRecyclerView;
+
+    Toolbar actionBar;
 
     private final static String KEY_CITY_MODEL = "key_city_model";
 
@@ -65,6 +68,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+        actionBar = getActivity().findViewById(R.id.main_toolbar);
+
     }
 
     // отмена запросов
@@ -75,8 +80,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     @Override
-    public void showData(double temperat) {
-        Toast.makeText(getContext(), "Текущая температура: " + temperat, Toast.LENGTH_SHORT).show();
+    public void showData(double temperature) {
+        Toast.makeText(getContext(), "Текущая температура: " + temperature, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -91,7 +96,16 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void changeTitle(CityModel cityModel) {
+        actionBar.setTitle(cityModel.getName());
+        // getActivity().getActionBar().setTitle(cityModel.getName());
+        //toolbar.setTitle(cityModel.getName());
+
 
     }
+
 }
 

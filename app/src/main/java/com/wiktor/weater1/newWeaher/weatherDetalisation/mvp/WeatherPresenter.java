@@ -27,7 +27,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
 
     @Override
     public void start(CityModel cityModel) {
-
+        view.changeTitle(cityModel);
         forecastWeatherCall = model.getForecastWeather(cityModel.getNameForQuery(), 7);
         forecastWeatherCall.enqueue(new Callback <WeatherForecastResponse>() {
             @Override

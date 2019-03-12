@@ -15,9 +15,7 @@ public interface WeatherContract {
 
     interface Presenter {
         void start(CityModel cityModel);
-
         void pause();
-
     }
 
     interface View {
@@ -26,6 +24,8 @@ public interface WeatherContract {
         void showErrorDialog(String error);
 
         void showList(List <WeatherModelForView> list);
+
+        void changeTitle(CityModel cityModel);
 
     }
 
