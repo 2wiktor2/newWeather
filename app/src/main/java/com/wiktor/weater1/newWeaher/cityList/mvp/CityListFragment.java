@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.wiktor.weater1.R;
 import com.wiktor.weater1.newWeaher.cityList.adapter.CityListAdapter;
@@ -52,7 +51,7 @@ public class CityListFragment extends Fragment implements CityListContract.View,
     }
 
     @Override
-    public void showCityList(List<CityModel> list) {
+    public void showCityList(List <CityModel> list) {
         CityListAdapter adapter = new CityListAdapter(list, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

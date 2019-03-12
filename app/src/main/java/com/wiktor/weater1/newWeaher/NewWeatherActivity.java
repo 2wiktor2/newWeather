@@ -5,10 +5,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.wiktor.weater1.R;
 import com.wiktor.weater1.newWeaher.cityList.mvp.CityListFragment;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -16,6 +18,8 @@ public class NewWeatherActivity extends AppCompatActivity {
 
     @BindView(R.id.main_toolbar)
     Toolbar toolbar;
+    @BindString(R.string.toolbar_title)
+    String toolbarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,7 @@ public class NewWeatherActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         openCityListFragment();
     }
@@ -40,7 +44,20 @@ public class NewWeatherActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        toolbar.setTitle(toolbarTitle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         super.onBackPressed();
-        toolbar.setTitle(R.string.toolbar_title);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                toolbar.setTitle(toolbarTitle);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
