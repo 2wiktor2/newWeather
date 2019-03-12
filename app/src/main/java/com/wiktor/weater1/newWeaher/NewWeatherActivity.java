@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 
 public class NewWeatherActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
+    @BindView(R.id.main_toolbar)
     Toolbar toolbar;
 
     @Override
@@ -24,7 +24,6 @@ public class NewWeatherActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-
         openCityListFragment();
     }
 

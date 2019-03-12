@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Weather</string>
     <string name="day_night">День / Ночь</string>
+    <string name="toolbar_title">Прогноз погоды</string>
 </resources>
