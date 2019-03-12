@@ -48,8 +48,6 @@ public class WeaverAdapter extends RecyclerView.Adapter<WeaverAdapter.MyWeatherV
         TextView date;
         @BindView(R.id.item_text_view_max_temp)
         TextView maxTemp;
-        @BindView(R.id.item_text_view_min_temp)
-        TextView minTemp;
         @BindView(R.id.item_image_view)
         ImageView image;
 
@@ -60,9 +58,9 @@ public class WeaverAdapter extends RecyclerView.Adapter<WeaverAdapter.MyWeatherV
         }
 
         public void bind(WeatherModelForView weatherModelForView) {
-            date.setText(weatherModelForView.getDate().toString());
-            maxTemp.setText(weatherModelForView.getMaxTemperature().toString());
-            minTemp.setText(weatherModelForView.getMinTemperature().toString());
+            date.setText(weatherModelForView.getDate());
+            maxTemp.setText(weatherModelForView.getMaxTemperature()+"\u00b0" +" / "+ weatherModelForView.getMinTemperature()+"\u00b0" );
+          // minTemp.setText(weatherModelForView.getMinTemperature().toString());
 
             Picasso.get()
                     .load(weatherModelForView.getImageUrl())

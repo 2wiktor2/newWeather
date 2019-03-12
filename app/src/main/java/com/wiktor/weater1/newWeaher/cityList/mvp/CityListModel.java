@@ -25,6 +25,8 @@ public class CityListModel implements CityListContract.Model {
         listCities.add(new CityModel("Кейптаун", "Cape Town"));
         listCities.add(new CityModel("Гавана", "Habana"));
         listCities.add(new CityModel("Рио-де-Жанейро", "Rio de Janeiro"));
+        // запрос работает с русскими названияи
+        listCities.add(new CityModel("Архангельск", "Архангельск"));
     }
 
     @Override

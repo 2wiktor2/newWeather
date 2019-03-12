@@ -55,7 +55,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         if (arg != null) {
             CityModel model = (CityModel) arg.getSerializable(KEY_CITY_MODEL);
             if (model != null) {
-               // Toast.makeText(getContext(), "получили модель " + model.getName(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), "получили модель " + model.getName(), Toast.LENGTH_SHORT).show();
                 presenter.start(model);
             }
         }
