@@ -74,8 +74,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        // показать стрелку в toolbar-е
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     // отмена запросов
@@ -107,8 +107,6 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     @Override
     public void changeTitle(CityModel cityModel) {
         actionBar.setTitle(cityModel.getName());
-        // getActivity().getActionBar().setTitle(cityModel.getName());
-        //toolbar.setTitle(cityModel.getName());
     }
 
 
