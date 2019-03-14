@@ -14,6 +14,7 @@ import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForVie
 
 import java.util.List;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -50,16 +51,18 @@ public class WeaverAdapter extends RecyclerView.Adapter<WeaverAdapter.MyWeatherV
         TextView maxTemp;
         @BindView(R.id.item_image_view)
         ImageView image;
-
+        @BindString(R.string.symbolGradus)  String degreeСelsius;
+        @BindString(R.string.symbolForSeparate) String symbol;
 
         public MyWeatherViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
         }
 
         public void bind(WeatherModelForView weatherModelForView) {
             date.setText(weatherModelForView.getDate());
-            maxTemp.setText(weatherModelForView.getMaxTemperature()+"\u00b0" +" / "+ weatherModelForView.getMinTemperature()+"\u00b0" );
+            maxTemp.setText(weatherModelForView.getMaxTemperature()+degreeСelsius +symbol+ weatherModelForView.getMinTemperature()+degreeСelsius );
           // minTemp.setText(weatherModelForView.getMinTemperature().toString());
 
             Picasso.get()

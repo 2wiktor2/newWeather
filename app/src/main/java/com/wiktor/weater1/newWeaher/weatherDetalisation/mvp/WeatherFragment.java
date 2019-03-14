@@ -22,6 +22,7 @@ import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForVie
 
 import java.util.List;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,6 +30,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @BindView(R.id.recycler_view_container)
     RecyclerView mRecyclerView;
+    @BindString(R.string.symbolGradus)
+    String gradus;
 
     Toolbar actionBar;
 
@@ -58,7 +61,6 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         if (arg != null) {
             CityModel model = (CityModel) arg.getSerializable(KEY_CITY_MODEL);
             if (model != null) {
-                // Toast.makeText(getContext(), "получили модель " + model.getName(), Toast.LENGTH_SHORT).show();
                 presenter.start(model);
             }
         }
@@ -87,7 +89,9 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @Override
     public void showData(double temperature) {
-        Toast.makeText(getContext(), "Текущая температура: " + temperature, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "Сейчас: " + temperature, Toast.LENGTH_SHORT).show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar()
+                .setSubtitle("Сейчас: " + temperature + gradus);
     }
 
     @Override

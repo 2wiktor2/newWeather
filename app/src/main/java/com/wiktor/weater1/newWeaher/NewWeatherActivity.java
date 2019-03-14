@@ -45,6 +45,7 @@ public class NewWeatherActivity extends AppCompatActivity {
     public void onBackPressed() {
         toolbar.setTitle(toolbarTitle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setSubtitle("");
         super.onBackPressed();
     }
 
