@@ -77,7 +77,9 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     @Override
     public void onResume() {
         super.onResume();
-        ((NewWeatherActivity) Objects.requireNonNull(getActivity())).showArrow(true);
+        if (getActivity() != null) {
+            ((NewWeatherActivity) (getActivity())).showArrow(true);
+        }
     }
 
     // отмена запросов
@@ -90,8 +92,10 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @Override
     public void showData(double temperature) {
-        ((NewWeatherActivity) Objects.requireNonNull(getActivity()))
-                .setMySubtitle("Сейчас: " + temperature + gradus);
+        if (getActivity() != null) {
+            ((NewWeatherActivity) (getActivity()))
+                    .setMySubtitle("Сейчас: " + temperature + gradus);
+        }
     }
 
     @Override
