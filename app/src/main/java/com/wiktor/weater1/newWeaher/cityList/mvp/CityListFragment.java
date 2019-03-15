@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,8 +59,8 @@ public class CityListFragment extends Fragment implements CityListContract.View,
         if (getActivity() != null) {
             ((NewWeatherActivity) getActivity()).setMyTitle(title);
             ((NewWeatherActivity) getActivity()).setMySubtitle("");
+            ((NewWeatherActivity) getActivity()).showArrow(false);
         }
-        Log.d("Mylog", "сработал метод onResume в первом фрагменте");
     }
 
     @Override
@@ -80,10 +79,9 @@ public class CityListFragment extends Fragment implements CityListContract.View,
         FragmentManager manager = getFragmentManager();
         if (manager == null) return;
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.frame, weatherFragment);
+        transaction.replace(R.id.frame, weatherFragment);
         transaction.addToBackStack(null);
         transaction.commit();
-        //Toast.makeText(getContext(), "клик" + model.getName(), Toast.LENGTH_SHORT).show();
     }
 }
 

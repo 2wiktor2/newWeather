@@ -77,6 +77,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     @Override
     public void onResume() {
         super.onResume();
+        ((NewWeatherActivity) Objects.requireNonNull(getActivity())).showArrow(true);
     }
 
     // отмена запросов
@@ -84,15 +85,12 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public void onPause() {
         super.onPause();
         presenter.pause();
-        ((NewWeatherActivity)Objects.requireNonNull(getActivity())).setMySubtitle("");
-        ((NewWeatherActivity)getActivity()).setMyTitle(title);
     }
 
 
     @Override
     public void showData(double temperature) {
-        //Toast.makeText(getContext(), "Сейчас: " + temperature, Toast.LENGTH_SHORT).show();
-        ((NewWeatherActivity)Objects.requireNonNull(getActivity()))
+        ((NewWeatherActivity) Objects.requireNonNull(getActivity()))
                 .setMySubtitle("Сейчас: " + temperature + gradus);
     }
 
@@ -113,7 +111,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @Override
     public void changeTitle(CityModel cityModel) {
-        ((NewWeatherActivity)Objects.requireNonNull(getActivity())).setMyTitle(cityModel.getName());
+        ((NewWeatherActivity) Objects.requireNonNull(getActivity())).setMyTitle(cityModel.getName());
     }
 
 
