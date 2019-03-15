@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.wiktor.weater1.R;
+import com.wiktor.weater1.newWeaher.NewWeatherActivity;
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.adapter.WeaverAdapter;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView;
 
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -32,8 +32,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     RecyclerView mRecyclerView;
     @BindString(R.string.symbolGradus)
     String gradus;
-
-    Toolbar actionBar;
+    @BindString(R.string.toolbar_title)
+    String title;
 
     private final static String KEY_CITY_MODEL = "key_city_model";
 
@@ -49,14 +49,16 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.weather_detalisation_fragment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        // todo get model from bundle
         Bundle arg = getArguments();
         if (arg != null) {
             CityModel model = (CityModel) arg.getSerializable(KEY_CITY_MODEL);
@@ -70,14 +72,11 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        actionBar = getActivity().findViewById(R.id.main_toolbar);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        // показать стрелку в toolbar-е
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     // отмена запросов
@@ -85,13 +84,18 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public void onPause() {
         super.onPause();
         presenter.pause();
+        ((NewWeatherActivity)Objects.requireNonNull(getActivity())).showArrow(true);
+        ((NewWeatherActivity)getActivity()).setMySubtitle("");
+        ((NewWeatherActivity)getActivity()).setMyTitle(title);
+
     }
+
 
     @Override
     public void showData(double temperature) {
         //Toast.makeText(getContext(), "Сейчас: " + temperature, Toast.LENGTH_SHORT).show();
-        ((AppCompatActivity) getActivity()).getSupportActionBar()
-                .setSubtitle("Сейчас: " + temperature + gradus);
+        ((NewWeatherActivity)Objects.requireNonNull(getActivity()))
+                .setMySubtitle("Сейчас: " + temperature + gradus);
     }
 
     @Override
@@ -103,14 +107,15 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public void showList(List <WeatherModelForView> list) {
         WeaverAdapter adapter = new WeaverAdapter(list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(
+                Objects.requireNonNull(getContext()), LinearLayout.VERTICAL));
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(adapter);
     }
 
     @Override
     public void changeTitle(CityModel cityModel) {
-        actionBar.setTitle(cityModel.getName());
+        ((NewWeatherActivity)Objects.requireNonNull(getActivity())).setMyTitle(cityModel.getName());
     }
 
 

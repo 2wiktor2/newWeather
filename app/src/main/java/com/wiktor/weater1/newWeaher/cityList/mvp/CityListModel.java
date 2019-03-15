@@ -9,6 +9,11 @@ public class CityListModel implements CityListContract.Model {
 
     ArrayList<CityModel> listCities;
 
+    @Override
+    public List<CityModel> getListOfCities() {
+        return listCities;
+    }
+
     public CityListModel() {
         listCities = new ArrayList<>();
         listCities.add(new CityModel("Москва", "Moscow"));
@@ -27,10 +32,5 @@ public class CityListModel implements CityListContract.Model {
         listCities.add(new CityModel("Рио-де-Жанейро", "Rio de Janeiro"));
         // запрос работает с русскими названияи
         listCities.add(new CityModel("Архангельск", "Архангельск"));
-    }
-
-    @Override
-    public List<CityModel> getListOfCities() {
-        return listCities;
     }
 }

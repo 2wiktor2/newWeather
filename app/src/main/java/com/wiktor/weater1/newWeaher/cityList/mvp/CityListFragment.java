@@ -8,11 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.wiktor.weater1.R;
+import com.wiktor.weater1.newWeaher.NewWeatherActivity;
 import com.wiktor.weater1.newWeaher.cityList.adapter.CityListAdapter;
 import com.wiktor.weater1.newWeaher.cityList.adapter.ClickInterface;
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
@@ -20,6 +22,7 @@ import com.wiktor.weater1.newWeaher.weatherDetalisation.mvp.WeatherFragment;
 
 import java.util.List;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,6 +32,9 @@ public class CityListFragment extends Fragment implements CityListContract.View,
     CityListContract.Presenter presenter = new CityListPresenter(this);
     @BindView(R.id.container)
     RecyclerView recyclerView;
+    @BindString(R.string.toolbar_title)
+    String title;
+
 
     @Nullable
     @Override
@@ -46,8 +52,16 @@ public class CityListFragment extends Fragment implements CityListContract.View,
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         presenter.start();
+    }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (getActivity() != null) {
+            ((NewWeatherActivity) getActivity()).setMyTitle(title);
+            ((NewWeatherActivity) getActivity()).setMySubtitle("");
+        }
+        Log.d("Mylog", "сработал метод onResume в первом фрагменте");
     }
 
     @Override

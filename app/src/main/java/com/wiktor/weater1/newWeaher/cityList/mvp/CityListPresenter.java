@@ -15,6 +15,7 @@ public class CityListPresenter implements CityListContract.Presenter {
         this.view = view;
     }
 
+
     @Override
     public void start() {
         List<CityModel> list = model.getListOfCities();
