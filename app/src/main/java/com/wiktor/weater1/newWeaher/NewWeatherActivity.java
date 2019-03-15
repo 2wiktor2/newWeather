@@ -65,12 +65,12 @@ public class NewWeatherActivity extends AppCompatActivity {
 
     }
 
-    public void showArrow(boolean show) {
+/*    public void showArrow(boolean show) {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(show);
             getSupportActionBar().setDisplayShowHomeEnabled(show);
         }
-    }
+    }*/
 
     public boolean checkShowArrow() {
         List <Fragment> list = getSupportFragmentManager().getFragments();

@@ -84,10 +84,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public void onPause() {
         super.onPause();
         presenter.pause();
-        ((NewWeatherActivity)Objects.requireNonNull(getActivity())).showArrow(true);
-        ((NewWeatherActivity)getActivity()).setMySubtitle("");
+        ((NewWeatherActivity)Objects.requireNonNull(getActivity())).setMySubtitle("");
         ((NewWeatherActivity)getActivity()).setMyTitle(title);
-
     }
 
 
