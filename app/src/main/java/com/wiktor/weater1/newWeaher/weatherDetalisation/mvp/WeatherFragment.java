@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.wiktor.weater1.R;
@@ -34,6 +35,9 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     String gradus;
     @BindString(R.string.toolbar_title)
     String title;
+    @BindView(R.id.progress_circular)
+    ProgressBar progressBar;
+
 
     private final static String KEY_CITY_MODEL = "key_city_model";
 
@@ -64,6 +68,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
             CityModel model = (CityModel) arg.getSerializable(KEY_CITY_MODEL);
             if (model != null) {
                 presenter.start(model);
+
+
             }
         }
     }
@@ -88,7 +94,6 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         super.onPause();
         presenter.pause();
     }
-
 
     @Override
     public void showData(double temperature) {
@@ -118,6 +123,10 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         ((NewWeatherActivity) Objects.requireNonNull(getActivity())).setMyTitle(cityModel.getName());
     }
 
+    @Override
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.INVISIBLE);
+    }
 
 }
 

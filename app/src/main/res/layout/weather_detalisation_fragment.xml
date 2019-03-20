@@ -9,9 +9,18 @@
     android:focusable="true"
     tools:context=".newWeaher.weatherDetalisation.mvp.WeatherFragment">
 
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

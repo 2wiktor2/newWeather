@@ -27,6 +27,8 @@ public interface WeatherContract {
 
         void changeTitle(CityModel cityModel);
 
+        void hideProgressBar();
+
     }
 
 }

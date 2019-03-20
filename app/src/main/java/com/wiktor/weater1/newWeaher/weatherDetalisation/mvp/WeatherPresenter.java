@@ -55,7 +55,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
                                     url);
                             newList.add(model);
                         }
-
+                        view.hideProgressBar();
                         view.showList(newList);
                     }
                 }
