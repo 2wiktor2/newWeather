@@ -3,7 +3,6 @@ package com.wiktor.weater1.newWeaher.cityList.mvp;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.arellomobile.mvp.MvpAppCompatFragment;
+import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.wiktor.weater1.R;
 import com.wiktor.weater1.newWeaher.NewWeatherActivity;
 import com.wiktor.weater1.newWeaher.cityList.adapter.CityListAdapter;
@@ -26,9 +27,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class CityListFragment extends Fragment implements CityListContract.View, ClickInterface {
+public class CityListFragment extends MvpAppCompatFragment implements CityListView, ClickInterface {
 
-    CityListContract.Presenter presenter = new CityListPresenter(this);
+    @InjectPresenter
+            CityListPresenter presenter;
     @BindView(R.id.container)
     RecyclerView recyclerView;
     @BindString(R.string.toolbar_title)
@@ -63,7 +65,7 @@ public class CityListFragment extends Fragment implements CityListContract.View,
         }
     }
 
-    @Override
+@Override
     public void showCityList(List <CityModel> list) {
         CityListAdapter adapter = new CityListAdapter(list, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

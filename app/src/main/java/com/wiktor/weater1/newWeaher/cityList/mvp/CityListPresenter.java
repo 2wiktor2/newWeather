@@ -1,25 +1,20 @@
 package com.wiktor.weater1.newWeaher.cityList.mvp;
 
+import com.arellomobile.mvp.InjectViewState;
+import com.arellomobile.mvp.MvpPresenter;
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
 
 import java.util.List;
 
-public class CityListPresenter implements CityListContract.Presenter {
 
-    CityListContract.View view;
+@InjectViewState
+public class CityListPresenter extends MvpPresenter <CityListView> {
 
     CityListContract.Model model = new CityListModel();
 
-
-    public CityListPresenter(CityListContract.View view) {
-        this.view = view;
-    }
-
-
-    @Override
     public void start() {
-        List<CityModel> list = model.getListOfCities();
-        view.showCityList(list);
+        List <CityModel> list = model.getListOfCities();
+        getViewState().showCityList(list);
 
     }
 }

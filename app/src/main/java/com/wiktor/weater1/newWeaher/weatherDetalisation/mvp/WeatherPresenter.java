@@ -1,5 +1,7 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp;
 
+import com.arellomobile.mvp.InjectViewState;
+import com.arellomobile.mvp.MvpPresenter;
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.Forecastday;
@@ -12,22 +14,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class WeatherPresenter implements WeatherContract.Presenter {
 
-    WeatherContract.View view;
+@InjectViewState
+public class WeatherPresenter extends MvpPresenter <WeatherView> {
+
     WeatherContract.Model model = new WeatherModel();
-
 
     Call <WeatherForecastResponse> forecastWeatherCall;
 
 
-    public WeatherPresenter(WeatherContract.View view) {
-        this.view = view;
-    }
-
-    @Override
     public void start(CityModel cityModel) {
-        view.changeTitle(cityModel);
+        getViewState().changeTitle(cityModel);
         forecastWeatherCall = model.getForecastWeather(cityModel.getNameForQuery(), 7);
         forecastWeatherCall.enqueue(new Callback <WeatherForecastResponse>() {
             @Override
@@ -35,7 +32,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
                 if (response.isSuccessful()) {
                     if (response.body() != null && response.body().getCurrent() != null) {
                         double t = response.body().getCurrent().getTempC();
-                        view.showData(t);
+                        getViewState().showData(t);
 
 
                         List <WeatherModelForView> newList = new ArrayList <>();
@@ -55,21 +52,20 @@ public class WeatherPresenter implements WeatherContract.Presenter {
                                     url);
                             newList.add(model);
                         }
-                        view.hideProgressBar();
-                        view.showList(newList);
+                        getViewState().hideProgressBar();
+                        getViewState().showList(newList);
                     }
                 }
             }
 
             @Override
             public void onFailure(Call <WeatherForecastResponse> call, Throwable t) {
-                view.showErrorDialog(t.getMessage());
+                getViewState().showErrorDialog(t.getMessage());
             }
         });
 
     }
 
-    @Override
     public void pause() {
         if (forecastWeatherCall != null) {
             forecastWeatherCall.cancel();
