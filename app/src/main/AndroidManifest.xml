@@ -16,7 +16,9 @@
         tools:ignore="GoogleAppIndexingWarning">
 
 
-        <activity android:name=".newWeaher.NewWeatherActivity">
+        <activity
+            android:name=".newWeaher.NewWeatherActivity"
+            android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
