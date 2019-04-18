@@ -15,21 +15,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a5ca2c7-8e67-4bb4-bbf9-487f195bd767" name="Default" comment="added git ignore">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherView.java" afterDir="false" />
+    <list default="true" id="5a5ca2c7-8e67-4bb4-bbf9-487f195bd767" name="Default" comment="moxy">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherPresenter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,28 +53,33 @@
         <counts>
           <entry key="gitignore" value="4" />
           <entry key="gradle" value="1" />
-          <entry key="java" value="20" />
+          <entry key="java" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="21" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="10" />
-          <entry key="java" value="179" />
-          <entry key="txt" value="16" />
+          <entry key="java" value="182" />
+          <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="10" />
-          <entry key="JAVA" value="179" />
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="JAVA" value="182" />
+          <entry key="PLAIN_TEXT" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -98,8 +91,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherFragment.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+                <state relative-caret-position="595">
+                  <caret line="61" column="50" lean-forward="true" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
                   <folding>
                     <element signature="e#4098#4099#0" expanded="true" />
                     <element signature="e#4155#4156#0" expanded="true" />
@@ -117,23 +110,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherPresenter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="130">
-                  <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="-496">
+                  <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
                 </state>
               </provider>
             </entry>
@@ -143,10 +124,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+                <state>
+                  <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -155,19 +136,31 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-445">
+                  <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListPresenter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                <state relative-caret-position="136">
+                  <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
                 </state>
               </provider>
             </entry>
@@ -176,7 +169,7 @@
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListContract.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="170">
-                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                  <caret line="12" selection-start-line="12" selection-end-line="12" />
                 </state>
               </provider>
             </entry>
@@ -203,7 +196,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="copy" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -2396,14 +2389,14 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/.gitignore" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java" />
       </list>
     </option>
   </component>
@@ -2766,7 +2759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555580942029</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="moxy">
+      <created>1555586625256</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1555586625256</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2779,7 +2779,7 @@
       <window_info id="Captures" order="3" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.2889126" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.21002132" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Android Profiler" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -2822,7 +2822,8 @@
     <MESSAGE value="toolbar changed2" />
     <MESSAGE value="toolbar changed3" />
     <MESSAGE value="added git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added git ignore" />
+    <MESSAGE value="moxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="moxy" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -3018,45 +3019,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListContract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding>
-            <element signature="e#4098#4099#0" expanded="true" />
-            <element signature="e#4155#4156#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -3067,20 +3040,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="61" column="50" lean-forward="true" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+          <folding>
+            <element signature="e#4098#4099#0" expanded="true" />
+            <element signature="e#4155#4156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="-496">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/weatherDetalisation/mvp/WeatherView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wiktor/weater1/newWeaher/cityList/mvp/CityListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-445">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
