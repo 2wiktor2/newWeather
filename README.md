@@ -5,4 +5,5 @@ Butterknife,
 MVP,
 Picasso,
 RecyclerView,
-Fragment
+Fragment,
+Moxy
