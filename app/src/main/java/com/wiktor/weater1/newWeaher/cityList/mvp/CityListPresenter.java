@@ -10,7 +10,7 @@ import java.util.List;
 @InjectViewState
 public class CityListPresenter extends MvpPresenter <CityListView> {
 
-    CityListContract.Model model = new CityListModel();
+    Model model = new CityListModel();
 
     public void start() {
         List <CityModel> list = model.getListOfCities();

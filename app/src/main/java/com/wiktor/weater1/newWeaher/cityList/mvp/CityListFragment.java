@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
 public class CityListFragment extends MvpAppCompatFragment implements CityListView, ClickInterface {
 
     @InjectPresenter
-            CityListPresenter presenter;
+    CityListPresenter presenter;
     @BindView(R.id.container)
     RecyclerView recyclerView;
     @BindString(R.string.toolbar_title)
@@ -65,7 +65,7 @@ public class CityListFragment extends MvpAppCompatFragment implements CityListVi
         }
     }
 
-@Override
+    @Override
     public void showCityList(List <CityModel> list) {
         CityListAdapter adapter = new CityListAdapter(list, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

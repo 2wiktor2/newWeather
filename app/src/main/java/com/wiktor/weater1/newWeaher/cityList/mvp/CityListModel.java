@@ -5,7 +5,7 @@ import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CityListModel implements CityListContract.Model {
+public class CityListModel implements Model {
 
     ArrayList<CityModel> listCities;
 

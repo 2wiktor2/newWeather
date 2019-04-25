@@ -10,5 +10,5 @@ import java.util.List;
 public interface CityListView extends MvpView {
 
     @StateStrategyType(AddToEndStrategy.class)
-    void showCityList(List<CityModel> list);
+    void showCityList(List <CityModel> list);
 }
