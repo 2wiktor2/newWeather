@@ -16,9 +16,11 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.wiktor.weater1.R;
 import com.wiktor.weater1.newWeaher.NewWeatherActivity;
 import com.wiktor.weater1.newWeaher.cityList.adapter.CityListAdapter;
-import com.wiktor.weater1.newWeaher.cityList.adapter.ClickInterface;
-import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
+import com.wiktor.weater1.newWeaher.cityList.adapter.ClickInterfaceKt;
+import com.wiktor.weater1.newWeaher.cityList.model.CityModelKt;
 import com.wiktor.weater1.newWeaher.weatherDetalisation.mvp.WeatherFragment;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -27,10 +29,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class CityListFragment extends MvpAppCompatFragment implements CityListView, ClickInterface {
+public class CityListFragment extends MvpAppCompatFragment implements CityListView, ClickInterfaceKt {
 
     @InjectPresenter
-            CityListPresenter presenter;
+    CityListPresenter presenter;
     @BindView(R.id.container)
     RecyclerView recyclerView;
     @BindString(R.string.toolbar_title)
@@ -65,8 +67,8 @@ public class CityListFragment extends MvpAppCompatFragment implements CityListVi
         }
     }
 
-@Override
-    public void showCityList(List <CityModel> list) {
+    @Override
+    public void showCityList(List <CityModelKt> list) {
         CityListAdapter adapter = new CityListAdapter(list, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -74,10 +76,8 @@ public class CityListFragment extends MvpAppCompatFragment implements CityListVi
     }
 
     @Override
-    public void click(CityModel model) {
-
+    public void click(@NotNull CityListModel model) {
         WeatherFragment weatherFragment = WeatherFragment.newInstance(model);
-
         FragmentManager manager = getFragmentManager();
         if (manager == null) return;
         FragmentTransaction transaction = manager.beginTransaction();

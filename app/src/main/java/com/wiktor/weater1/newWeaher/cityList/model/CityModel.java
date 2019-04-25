@@ -7,7 +7,9 @@ public class CityModel implements Serializable {
     private String nameForQuery;
     private String name;
 
-    public CityModel(String name, String nameForQuery) {
+
+
+       public CityModel(String name, String nameForQuery) {
         this.name = name;
         this.nameForQuery = nameForQuery;
     }

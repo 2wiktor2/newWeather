@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.wiktor.weater1.R;
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
+import com.wiktor.weater1.newWeaher.cityList.model.CityModelKt;
 
 import java.util.List;
 
@@ -18,11 +19,11 @@ import butterknife.ButterKnife;
 
 public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityListViewHolder> {
 
-    private List<CityModel> list = null;
-    private ClickInterface clickInterface;
+    private List<CityModelKt> list;
+    private ClickInterfaceKt clickInterface;
 
 
-    public CityListAdapter(List<CityModel> list, ClickInterface clickInterface) {
+    public CityListAdapter(List<CityModelKt> list, ClickInterfaceKt clickInterface) {
         this.list = list;
         this.clickInterface = clickInterface;
     }
@@ -60,14 +61,14 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityLi
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    CityModel model = list.get(getAdapterPosition());
+                    CityModelKt model = list.get(getAdapterPosition());
                     clickInterface.click(model);
                 }
             });
         }
 
 
-        public void bind(CityModel model) {
+        public void bind(CityModelKt model) {
             textView.setText(model.getName());
         }
 

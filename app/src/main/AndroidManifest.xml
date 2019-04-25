@@ -14,8 +14,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-
-
+        <activity android:name=".newWeaher.NewWeatherActivityKt"></activity>
         <activity
             android:name=".newWeaher.NewWeatherActivity"
             android:configChanges="orientation|keyboardHidden">
@@ -24,10 +23,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-
     </application>
 
 </manifest>

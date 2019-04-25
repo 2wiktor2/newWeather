@@ -1,36 +1,36 @@
 package com.wiktor.weater1.newWeaher.cityList.mvp;
 
-import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
+import com.wiktor.weater1.newWeaher.cityList.model.CityModelKt;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CityListModel implements CityListContract.Model {
 
-    ArrayList<CityModel> listCities;
+    ArrayList<CityModelKt> listCities;
 
     @Override
-    public List<CityModel> getListOfCities() {
+    public List<CityModelKt> getListOfCities() {
         return listCities;
     }
 
     public CityListModel() {
         listCities = new ArrayList<>();
-        listCities.add(new CityModel("Москва", "Moscow"));
-        listCities.add(new CityModel("Париж", "Paris"));
-        listCities.add(new CityModel("Лондон", "London"));
-        listCities.add(new CityModel("Нью-Йорк", "new-york"));
-        listCities.add(new CityModel("Милан", "milan"));
-        listCities.add(new CityModel("Рим", "rome"));
-        listCities.add(new CityModel("Каир", "Cairo"));
-        listCities.add(new CityModel("Минск", "Minsk"));
-        listCities.add(new CityModel("Стокгольм", "Stockholm"));
-        listCities.add(new CityModel("Рейкьявик", "Reykjavik"));
-        listCities.add(new CityModel("Крайстчерч", "Christchurch"));
-        listCities.add(new CityModel("Кейптаун", "Cape Town"));
-        listCities.add(new CityModel("Гавана", "Habana"));
-        listCities.add(new CityModel("Рио-де-Жанейро", "Rio de Janeiro"));
+        listCities.add(new CityModelKt("Москва", "Moscow"));
+        listCities.add(new CityModelKt("Париж", "Paris"));
+        listCities.add(new CityModelKt("Лондон", "London"));
+        listCities.add(new CityModelKt("Нью-Йорк", "new-york"));
+        listCities.add(new CityModelKt("Милан", "milan"));
+        listCities.add(new CityModelKt("Рим", "rome"));
+        listCities.add(new CityModelKt("Каир", "Cairo"));
+        listCities.add(new CityModelKt("Минск", "Minsk"));
+        listCities.add(new CityModelKt("Стокгольм", "Stockholm"));
+        listCities.add(new CityModelKt("Рейкьявик", "Reykjavik"));
+        listCities.add(new CityModelKt("Крайстчерч", "Christchurch"));
+        listCities.add(new CityModelKt("Кейптаун", "Cape Town"));
+        listCities.add(new CityModelKt("Гавана", "Habana"));
+        listCities.add(new CityModelKt("Рио-де-Жанейро", "Rio de Janeiro"));
         // запрос работает с русскими названияи
-        listCities.add(new CityModel("Архангельск", "Архангельск"));
+        listCities.add(new CityModelKt("Архангельск", "Архангельск"));
     }
 }

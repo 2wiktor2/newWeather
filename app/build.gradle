@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -46,4 +48,8 @@ dependencies {
     annotationProcessor 'com.arello-mobile:moxy-compiler:1.5.5'
     implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
     implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
