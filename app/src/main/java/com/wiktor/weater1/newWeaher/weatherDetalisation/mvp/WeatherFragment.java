@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindString;
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WeatherFragment extends MvpAppCompatFragment implements WeatherView {
@@ -34,13 +33,13 @@ public class WeatherFragment extends MvpAppCompatFragment implements WeatherView
     WeatherPresenter presenter;
 
 
-    @BindView(R.id.recycler_view_container)
+   // @BindView(R.id.recycler_view_container)
     RecyclerView mRecyclerView;
     @BindString(R.string.symbolGradus)
     String gradus;
     @BindString(R.string.toolbar_title)
     String title;
-    @BindView(R.id.progress_circular)
+  //  @BindView(R.id.progress_circular)
     ProgressBar progressBar;
 
     private final static String KEY_CITY_MODEL = "key_city_model";
@@ -71,8 +70,6 @@ public class WeatherFragment extends MvpAppCompatFragment implements WeatherView
             CityModel model = (CityModel) arg.getSerializable(KEY_CITY_MODEL);
             if (model != null) {
                 presenter.start(model);
-
-
             }
         }
     }
@@ -81,6 +78,8 @@ public class WeatherFragment extends MvpAppCompatFragment implements WeatherView
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+        progressBar = Objects.requireNonNull(getView()).findViewById(R.id.progress_circular);
+        mRecyclerView = Objects.requireNonNull(getView()).findViewById(R.id.recycler_view_container);
     }
 
     @Override

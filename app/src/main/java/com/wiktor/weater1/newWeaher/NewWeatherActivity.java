@@ -11,12 +11,10 @@ import com.wiktor.weater1.R;
 import com.wiktor.weater1.newWeaher.cityList.mvp.CityListFragment;
 
 import butterknife.BindString;
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class NewWeatherActivity extends AppCompatActivity {
 
-    @BindView(R.id.main_toolbar)
     Toolbar toolbar;
     @BindString(R.string.toolbar_title)
     String toolbarTitle;
@@ -27,6 +25,8 @@ public class NewWeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_weather);
 
         ButterKnife.bind(this);
+
+        toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
         openCityListFragment();
 

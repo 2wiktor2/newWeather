@@ -12,7 +12,6 @@ import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
 
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -49,7 +48,7 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityLi
 
     class CityListViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.item_text_view)
+      //  @BindView(R.id.item_text_view)
         TextView textView;
 
 
@@ -57,6 +56,7 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityLi
             super(itemView);
 
             ButterKnife.bind(this, itemView);
+            textView = itemView.findViewById(R.id.item_text_view);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

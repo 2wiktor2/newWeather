@@ -1,37 +1,10 @@
 package com.wiktor.weater1.newWeaher.cityList.mvp;
 
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.arellomobile.mvp.MvpAppCompatFragment;
-import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.wiktor.weater1.R;
-import com.wiktor.weater1.newWeaher.NewWeatherActivity;
-import com.wiktor.weater1.newWeaher.cityList.adapter.CityListAdapter;
-import com.wiktor.weater1.newWeaher.cityList.adapter.ClickInterface;
-import com.wiktor.weater1.newWeaher.cityList.model.CityModel;
-import com.wiktor.weater1.newWeaher.weatherDetalisation.mvp.WeatherFragment;
-
-import java.util.List;
-
-import butterknife.BindString;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-
-public class CityListFragment extends MvpAppCompatFragment implements CityListView, ClickInterface {
+/*public class CityListFragment extends MvpAppCompatFragment implements CityListView, ClickInterface {
 
     @InjectPresenter
     CityListPresenter presenter;
-    @BindView(R.id.container)
+//    @BindView(R.id.container)
     RecyclerView recyclerView;
     @BindString(R.string.toolbar_title)
     String title;
@@ -47,6 +20,8 @@ public class CityListFragment extends MvpAppCompatFragment implements CityListVi
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+
+        recyclerView = getView().findViewById(R.id.container);
     }
 
     @Override
@@ -66,7 +41,7 @@ public class CityListFragment extends MvpAppCompatFragment implements CityListVi
     }
 
     @Override
-    public void showCityList(List <CityModel> list) {
+    public void showCityList(List<CityModel> list) {
         CityListAdapter adapter = new CityListAdapter(list, this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -85,5 +60,6 @@ public class CityListFragment extends MvpAppCompatFragment implements CityListVi
         transaction.addToBackStack(null);
         transaction.commit();
     }
-}
+}*/
+
 
