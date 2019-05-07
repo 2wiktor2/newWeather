@@ -1,6 +1,11 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp
 
-/*
+import com.wiktor.weater1.newWeaher.weatherDetalisation.network.ApiWeather
+import com.wiktor.weater1.newWeaher.weatherDetalisation.network.NetworkHelper
+import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.WeatherForecastResponse
+import retrofit2.Call
+
+
 class WeatherModel : WeatherContract.Model {
 
     private val apiWeather: ApiWeather
@@ -14,4 +19,4 @@ class WeatherModel : WeatherContract.Model {
         return apiWeather.getForecastWeather(NetworkHelper.KEY, city, days)
     }
 }
-*/
+

@@ -1,16 +1,18 @@
 package com.wiktor.weater1.newWeaher.cityList.adapter
 
-/*
-class CityListAdapter : RecyclerView.Adapter<CityListAdapter.CityListViewHolder> {
+import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import com.wiktor.weater1.R
+import com.wiktor.weater1.newWeaher.cityList.model.CityModel
 
-    private val list: List<CityModel>? = null
-    private val clickInterface: ClickInterface
+class CityListAdapter(
+        private val list: List<CityModel>,
+        private val clickInterface: ClickInterface)
+    : RecyclerView.Adapter<CityListAdapter.CityListViewHolder>() {
 
-
-    fun CityListAdapter(list: List<CityModel>, clickInterface: ClickInterface): ??? {
-        this.list = list
-        this.clickInterface = clickInterface
-    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): CityListViewHolder {
         val inflater = LayoutInflater.from(viewGroup.context)
@@ -20,23 +22,19 @@ class CityListAdapter : RecyclerView.Adapter<CityListAdapter.CityListViewHolder>
 
 
     override fun onBindViewHolder(cityListViewHolder: CityListViewHolder, i: Int) {
-        cityListViewHolder.bind(list!![i])
+        cityListViewHolder.bind(list[i])
     }
 
-    override fun getItemCount(): Int {
-        return list!!.size
-    }
+    override fun getItemCount() = list.size
 
 
-    internal inner class CityListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class CityListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textView: TextView
 
         init {
-
-            ButterKnife.bind(this, itemView)
             textView = itemView.findViewById(R.id.item_text_view)
             itemView.setOnClickListener {
-                val model = list!![adapterPosition]
+                val model = list[adapterPosition]
                 clickInterface.click(model)
             }
         }
@@ -47,4 +45,4 @@ class CityListAdapter : RecyclerView.Adapter<CityListAdapter.CityListViewHolder>
         }
 
     }
-}*/
+}

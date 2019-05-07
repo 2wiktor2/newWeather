@@ -6,8 +6,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import butterknife.BindString
-import butterknife.ButterKnife
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.wiktor.weater1.R
@@ -21,10 +19,9 @@ import com.wiktor.weater1.newWeaher.weatherDetalisation.mvp.WeatherFragment
 class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
     @InjectPresenter
-    internal var presenter: CityListPresenter? = null
+    lateinit var presenter: CityListPresenter
     internal lateinit var recyclerView: RecyclerView
-    @BindString(R.string.toolbar_title)
-    internal var title: String? = null
+     lateinit var title: String
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,14 +30,14 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ButterKnife.bind(this, view)
 
         recyclerView = getView()!!.findViewById(R.id.container)
+        title = "Прогноз погоды"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        presenter!!.start()
+        presenter.start()
     }
 
     override fun onResume() {
