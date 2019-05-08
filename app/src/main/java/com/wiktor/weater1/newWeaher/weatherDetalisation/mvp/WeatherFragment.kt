@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.Toast
-import butterknife.ButterKnife
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.wiktor.weater1.R
@@ -20,14 +19,16 @@ import com.wiktor.weater1.newWeaher.NewWeatherActivity
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel
 import com.wiktor.weater1.newWeaher.weatherDetalisation.adapter.WeaverAdapter
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView
+import kotlinx.android.synthetic.main.weather_detalisation_fragment.*
 import java.util.*
 
 class WeatherFragment : MvpAppCompatFragment(), WeatherView {
 
     @InjectPresenter
     lateinit var presenter: WeatherPresenter
-    internal lateinit var mRecyclerView: RecyclerView
-    internal lateinit var progressBar: ProgressBar
+
+    private lateinit var mRecyclerView: RecyclerView
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -48,9 +49,8 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ButterKnife.bind(this, view)
-        progressBar = Objects.requireNonNull<View>(getView()).findViewById(R.id.progress_circular)
-        mRecyclerView = Objects.requireNonNull<View>(getView()).findViewById(R.id.recycler_view_container)
+        progressBar =progress_circular
+        mRecyclerView = recycler_view_container
     }
 
     override fun onResume() {
@@ -96,8 +96,7 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
 
     companion object {
 
-        private val KEY_CITY_MODEL = "key_city_model"
-
+        private const val KEY_CITY_MODEL = "key_city_model"
 
         fun newInstance(cityModel: CityModel): WeatherFragment {
             val weatherFragment = WeatherFragment()

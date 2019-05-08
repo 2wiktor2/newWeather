@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import butterknife.ButterKnife
 import com.squareup.picasso.Picasso
 import com.wiktor.weater1.R
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView
+import kotlinx.android.synthetic.main.item_forecast_weaver.view.*
 
 class WeaverAdapter(private val list: List<WeatherModelForView>) : RecyclerView.Adapter<WeaverAdapter.MyWeatherViewHolder>() {
+
+
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): MyWeatherViewHolder {
         val inflater = LayoutInflater.from(viewGroup.context)
@@ -28,16 +30,9 @@ class WeaverAdapter(private val list: List<WeatherModelForView>) : RecyclerView.
     }
 
     inner class MyWeatherViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var date: TextView
-        var maxTemp: TextView
-        var image: ImageView
-
-        init {
-            ButterKnife.bind(this, itemView)
-            date = itemView.findViewById(R.id.item_text_view_date)
-            maxTemp = itemView.findViewById(R.id.item_text_view_max_temp)
-            image = itemView.findViewById(R.id.item_image_view)
-        }
+        private var date: TextView = itemView.item_text_view_date
+        private var maxTemp: TextView = itemView.item_text_view_max_temp
+        private var image: ImageView = itemView.item_image_view
 
         fun bind(weatherModelForView: WeatherModelForView) {
 
@@ -49,8 +44,6 @@ class WeaverAdapter(private val list: List<WeatherModelForView>) : RecyclerView.
                     .placeholder(R.drawable.ic_refresh_black_24dp)
                     .error(R.drawable.ic_error_outline_black_24dp)
                     .into(image)
-
-
         }
     }
 }

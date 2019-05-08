@@ -14,14 +14,14 @@ import com.wiktor.weater1.newWeaher.cityList.adapter.CityListAdapter
 import com.wiktor.weater1.newWeaher.cityList.adapter.ClickInterface
 import com.wiktor.weater1.newWeaher.cityList.model.CityModel
 import com.wiktor.weater1.newWeaher.weatherDetalisation.mvp.WeatherFragment
+import kotlinx.android.synthetic.main.city_list_fragment.*
 
 
 class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
     @InjectPresenter
     lateinit var presenter: CityListPresenter
-    internal lateinit var recyclerView: RecyclerView
-     lateinit var title: String
+    private lateinit var recyclerView: RecyclerView
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -30,9 +30,7 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        recyclerView = getView()!!.findViewById(R.id.container)
-        title = "Прогноз погоды"
+        recyclerView = container
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -42,24 +40,34 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
     override fun onResume() {
         super.onResume()
-        if (activity != null) {
-            (activity as NewWeatherActivity).setMyTitle(title)
+        (activity as NewWeatherActivity).apply {
+            this.setMyTitle(getString(R.string.toolbar_title))
+            this.setMySubtitle("")
+            this.showArrow(false)
+        }
+
+/*        if (activity != null) {
+            (activity as NewWeatherActivity).setMyTitle()
             (activity as NewWeatherActivity).setMySubtitle("")
             (activity as NewWeatherActivity).showArrow(false)
-        }
+        }*/
     }
 
     override fun showCityList(list: List<CityModel>) {
-        val adapter = CityListAdapter(list, this)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = CityListAdapter(list, this@CityListFragment)
+        }
+
+/*        val adapter = CityListAdapter(list, this)
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = adapter
+        recyclerView.adapter = adapter*/
     }
 
     override fun click(model: CityModel) {
 
         val weatherFragment = WeatherFragment.newInstance(model)
-
         val manager = fragmentManager ?: return
         val transaction = manager.beginTransaction()
         transaction.replace(R.id.frame, weatherFragment)
