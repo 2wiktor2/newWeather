@@ -78,7 +78,7 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
     }
 
     override fun showList(list: List<WeatherModelForView>) {
-        val adapter = WeaverAdapter(list)
+        val adapter = WeaverAdapter(list, null)
         val layoutManager = LinearLayoutManager(context)
         mRecyclerView.addItemDecoration(DividerItemDecoration(
                 Objects.requireNonNull<Context>(context), LinearLayout.VERTICAL))

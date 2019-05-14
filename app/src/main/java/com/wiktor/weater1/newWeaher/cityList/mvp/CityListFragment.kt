@@ -36,6 +36,31 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter.start()
+
+
+        recyclerView.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+
+        val pp = object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        }
+
+        recyclerView.setOnClickListener { pp }
+
+
+        recyclerView.setOnClickListener(
+
+                {
+
+                }
+        )
+
+
     }
 
     override fun onResume() {
