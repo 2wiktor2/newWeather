@@ -38,27 +38,19 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
         presenter.start()
 
 
-        recyclerView.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-        })
+        recyclerView.setOnClickListener {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
 
         val pp = object : View.OnClickListener {
             override fun onClick(v: View?) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         }
-
         recyclerView.setOnClickListener { pp }
+        recyclerView.setOnClickListener {
 
-
-        recyclerView.setOnClickListener(
-
-                {
-
-                }
-        )
+        }
 
 
     }

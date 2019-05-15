@@ -1,6 +1,5 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.adapter
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,7 @@ import com.wiktor.weater1.R
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView
 import kotlinx.android.synthetic.main.item_forecast_weaver.view.*
 
-class WeaverAdapter(private val list: List<WeatherModelForView>, val context: Context) : RecyclerView.Adapter<WeaverAdapter.MyWeatherViewHolder>() {
+class WeaverAdapter(private val list: List<WeatherModelForView>) : RecyclerView.Adapter<WeaverAdapter.MyWeatherViewHolder>() {
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): MyWeatherViewHolder {

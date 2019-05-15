@@ -1,7 +1,7 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.network
 
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.WeatherForecastResponse
-import retrofit2.Call
+import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,7 +11,7 @@ interface ApiWeather {
      fun getForecastWeather(
             @Query("key") key: String,
             @Query("q") city: String,
-            @Query("days") days: Int): Call<WeatherForecastResponse>
+            @Query("days") days: Int): Observable<WeatherForecastResponse>
 }
 
 /*public interface ApiWeather {

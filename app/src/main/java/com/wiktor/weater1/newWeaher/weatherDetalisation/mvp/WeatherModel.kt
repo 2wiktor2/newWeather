@@ -3,7 +3,7 @@ package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.ApiWeather
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.NetworkHelper
 import com.wiktor.weater1.newWeaher.weatherDetalisation.network.response.forecast.WeatherForecastResponse
-import retrofit2.Call
+import io.reactivex.Observable
 
 
 class WeatherModel : WeatherContract.Model {
@@ -15,7 +15,8 @@ class WeatherModel : WeatherContract.Model {
         apiWeather = myRetrofit.create(ApiWeather::class.java)
     }
 
-    override fun getForecastWeather(city: String, days: Int): Call<WeatherForecastResponse> {
+
+    override fun getForecastWeather(city: String, days: Int): Observable<WeatherForecastResponse> {
         return apiWeather.getForecastWeather(NetworkHelper.KEY, city, days)
     }
 }
