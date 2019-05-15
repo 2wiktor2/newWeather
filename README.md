@@ -6,4 +6,5 @@ MVP,
 Picasso,
 RecyclerView,
 Fragment,
-Moxy
+Moxy,
+RxJava 2
