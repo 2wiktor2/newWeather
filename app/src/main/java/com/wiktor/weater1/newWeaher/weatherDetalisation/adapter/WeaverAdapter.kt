@@ -37,8 +37,6 @@ class WeaverAdapter(private val list: List<WeatherModelForView>) : RecyclerView.
 
         fun bind(weatherModelForView: WeatherModelForView) {
 
-
-           // var gradus = itemView.context.resources.getString()
             date.text = weatherModelForView.date
             maxTemp.text = weatherModelForView.maxTemperature.toString() + "°" + " / " + weatherModelForView.minTemperature + "°"
 

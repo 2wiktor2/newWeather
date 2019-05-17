@@ -39,35 +39,19 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
 
         recyclerView.setOnClickListener {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
-        val pp = object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-        }
+        val pp = View.OnClickListener { }
         recyclerView.setOnClickListener { pp }
-        recyclerView.setOnClickListener {
-
-        }
-
-
     }
 
     override fun onResume() {
         super.onResume()
         (activity as NewWeatherActivity).apply {
-            this.setMyTitle(getString(R.string.toolbar_title))
-            this.setMySubtitle("")
-            this.showArrow(false)
+            setMyTitle(getString(R.string.toolbar_title))
+            setMySubtitle("")
+            showArrow(false)
         }
-
-/*        if (activity != null) {
-            (activity as NewWeatherActivity).setMyTitle()
-            (activity as NewWeatherActivity).setMySubtitle("")
-            (activity as NewWeatherActivity).showArrow(false)
-        }*/
     }
 
     override fun showCityList(list: List<CityModel>) {
@@ -75,11 +59,6 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
             layoutManager = LinearLayoutManager(context)
             adapter = CityListAdapter(list, this@CityListFragment)
         }
-
-/*        val adapter = CityListAdapter(list, this)
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = adapter*/
     }
 
     override fun click(model: CityModel) {
@@ -87,8 +66,10 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
         val weatherFragment = WeatherFragment.newInstance(model)
         val manager = fragmentManager ?: return
         val transaction = manager.beginTransaction()
-        transaction.replace(R.id.frame, weatherFragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        transaction.apply {
+            replace(R.id.frame, weatherFragment)
+            addToBackStack(null)
+            commit()
+        }
     }
 }

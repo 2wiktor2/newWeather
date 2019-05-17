@@ -8,9 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkHelper {
 
-    val KEY: String = "29905fab70f34906863212017190703"
+    const val KEY: String = "29905fab70f34906863212017190703"
 
-    private val BASE_URL: String = "http://api.apixu.com/"
+    private const val BASE_URL: String = "http://api.apixu.com/"
 
     val retrofit: Retrofit
         get() {

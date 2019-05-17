@@ -1,8 +1,6 @@
 package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp
 
-import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -20,7 +18,6 @@ import com.wiktor.weater1.newWeaher.cityList.model.CityModel
 import com.wiktor.weater1.newWeaher.weatherDetalisation.adapter.WeaverAdapter
 import com.wiktor.weater1.newWeaher.weatherDetalisation.model.WeatherModelForView
 import kotlinx.android.synthetic.main.weather_detalisation_fragment.*
-import java.util.*
 
 class WeatherFragment : MvpAppCompatFragment(), WeatherView {
 
@@ -40,24 +37,23 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val arg = arguments
-        if (arg != null) {
+
+        arg?.let {
             val model = arg.getSerializable(KEY_CITY_MODEL) as CityModel
             presenter.start(model)
-
         }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        progressBar =progress_circular
+        progressBar = progress_circular
         mRecyclerView = recycler_view_container
     }
 
     override fun onResume() {
         super.onResume()
-        if (activity != null) {
-            (activity as NewWeatherActivity).showArrow(true)
-        }
+        activity.let { (activity as NewWeatherActivity).showArrow(true) }
     }
 
     // отмена запросов
@@ -67,9 +63,8 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
     }
 
     override fun showData(temperat: Double) {
-        if (activity != null) {
-            (activity as NewWeatherActivity)
-                    .setMySubtitle("Сейчас: $temperat°")
+        activity.let {
+            (activity as NewWeatherActivity).setMySubtitle("Сейчас: $temperat°")
         }
     }
 
@@ -78,16 +73,17 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
     }
 
     override fun showList(list: List<WeatherModelForView>) {
-        val adapter = WeaverAdapter(list)
-        val layoutManager = LinearLayoutManager(context)
-        mRecyclerView.addItemDecoration(DividerItemDecoration(
-                Objects.requireNonNull<Context>(context), LinearLayout.VERTICAL))
-        mRecyclerView.layoutManager = layoutManager
-        mRecyclerView.adapter = adapter
+
+        mRecyclerView.let { recyclerView -> context?.let { context -> recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL)) } }
+
+        mRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = WeaverAdapter(list)
+        }
     }
 
     override fun changeTitle(cityModel: CityModel) {
-        (Objects.requireNonNull<FragmentActivity>(activity) as NewWeatherActivity).setMyTitle(cityModel.name)
+        ((activity) as NewWeatherActivity).setMyTitle(cityModel.name)
     }
 
     override fun hideProgressBar() {
