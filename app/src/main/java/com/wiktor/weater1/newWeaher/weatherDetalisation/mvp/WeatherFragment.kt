@@ -77,12 +77,6 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
         }
     }
 
-/*
-        recycler_view_container.let { recyclerView -> context?.let { context -> recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL)) } }
-            recycler_view_container.layoutManager = LinearLayoutManager(context)
-            recycler_view_container.adapter = WeaverAdapter(list)
-*/
-
     override fun changeTitle(cityModel: CityModel) {
         ((activity) as NewWeatherActivity).setMyTitle(cityModel.name)
     }
