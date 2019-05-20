@@ -3,7 +3,6 @@ package com.wiktor.weater1.newWeaher.weatherDetalisation.mvp
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,8 +22,6 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
 
     @InjectPresenter
     lateinit var presenter: WeatherPresenter
-
-    private lateinit var mRecyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
 
     override fun onCreateView(
@@ -48,7 +45,6 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         progressBar = progress_circular
-        mRecyclerView = recycler_view_container
     }
 
     override fun onResume() {
@@ -64,7 +60,7 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
 
     override fun showData(temperat: Double) {
         activity.let {
-            (activity as NewWeatherActivity).setMySubtitle("Сейчас: $temperat°")
+            (activity as? NewWeatherActivity)?.let { it.setMySubtitle("Сейчас: $temperat°") }
         }
     }
 
@@ -72,15 +68,20 @@ class WeatherFragment : MvpAppCompatFragment(), WeatherView {
         Toast.makeText(context, "Ошибка: $error", Toast.LENGTH_SHORT).show()
     }
 
+
     override fun showList(list: List<WeatherModelForView>) {
-
-        mRecyclerView.let { recyclerView -> context?.let { context -> recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL)) } }
-
-        mRecyclerView.apply {
+        recycler_view_container.apply {
+            addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
             layoutManager = LinearLayoutManager(context)
             adapter = WeaverAdapter(list)
         }
     }
+
+/*
+        recycler_view_container.let { recyclerView -> context?.let { context -> recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL)) } }
+            recycler_view_container.layoutManager = LinearLayoutManager(context)
+            recycler_view_container.adapter = WeaverAdapter(list)
+*/
 
     override fun changeTitle(cityModel: CityModel) {
         ((activity) as NewWeatherActivity).setMyTitle(cityModel.name)

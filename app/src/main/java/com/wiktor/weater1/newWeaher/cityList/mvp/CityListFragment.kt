@@ -2,7 +2,6 @@ package com.wiktor.weater1.newWeaher.cityList.mvp
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,16 +20,10 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
 
     @InjectPresenter
     lateinit var presenter: CityListPresenter
-    private lateinit var recyclerView: RecyclerView
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.city_list_fragment, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        recyclerView = container
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -38,11 +31,8 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
         presenter.start()
 
 
-        recyclerView.setOnClickListener {
+        container.setOnClickListener {
         }
-
-        val pp = View.OnClickListener { }
-        recyclerView.setOnClickListener { pp }
     }
 
     override fun onResume() {
@@ -55,7 +45,7 @@ class CityListFragment : MvpAppCompatFragment(), CityListView, ClickInterface {
     }
 
     override fun showCityList(list: List<CityModel>) {
-        recyclerView.apply {
+        container.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = CityListAdapter(list, this@CityListFragment)
         }

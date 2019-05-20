@@ -29,24 +29,25 @@ class WeatherPresenter : MvpPresenter<WeatherView>() {
             }
 
             override fun onNext(weatherForecastResponse: WeatherForecastResponse) {
-                val t = weatherForecastResponse.current?.let { it.tempC ?: "12,3" }
+                val t = weatherForecastResponse.current?.let { it.tempC ?: "xx,x" }
                 viewState.showData(t as Double)
 
                 val newList = ArrayList<WeatherModelForView>()
-                val size = weatherForecastResponse.forecast?.forecastday?.size
-                for (i in 0 until size!!) {
-                    val forecastDay = weatherForecastResponse.forecast?.forecastday!![i]
+                val size: Int = weatherForecastResponse.forecast?.forecastday?.size ?: 7
+                for (i in 0 until size) {
+                    val forecastDay = weatherForecastResponse.forecast?.forecastday?.get(i)
 
-                    var url = forecastDay.day?.condition?.icon
+                    var url = forecastDay?.day?.condition?.icon
                     url?.startsWith("//").let { url = "http:$url" }
 
 
-                    val model = url?.let { it ->
+                    val model = url?.let { myUrl ->
                         WeatherModelForView(
-                                forecastDay.date ?: "_",
-                                forecastDay.day?.let { it.maxtempC ?: 99.9 },
-                                forecastDay.day?.let { it.mintempC ?: 88.9 },
-                                it)
+                                forecastDay?.date ?: "_",
+                                forecastDay?.day?.let { it.maxtempC ?: 00.0 },
+                                forecastDay?.day?.let { it.mintempC ?: 00.0 },
+                                myUrl
+                        )
                     }
                     model?.let { newList.add(it) }
                 }
