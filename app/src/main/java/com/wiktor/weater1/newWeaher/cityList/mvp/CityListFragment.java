@@ -53,7 +53,9 @@ public class CityListFragment extends Fragment implements CityListView, ClickInt
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        presenter.start();
+        if (presenter != null) {
+            presenter.start();
+        }
     }
 
     @Override

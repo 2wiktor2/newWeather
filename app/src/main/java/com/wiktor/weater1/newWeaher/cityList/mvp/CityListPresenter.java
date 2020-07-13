@@ -15,6 +15,5 @@ public class CityListPresenter extends MvpPresenter <CityListView> {
     public void start() {
         List <CityModel> list = model.getListOfCities();
         getViewState().showCityList(list);
-
     }
 }
